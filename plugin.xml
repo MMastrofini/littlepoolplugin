@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-situscale"
+        version="1.0.0">
+
+    <name>BluetoothActivatorPlugin</name>
+
+    <description>
+        Situ Scale Bridge
+    </description>
+
+    <author>Manuel Mastrofini</author>
+
+    <license>MIT</license>
+
+    <keywords>Situ </keywords>
+
+	  
+    <repo>https://mastrofini@bitbucket.org/mastrofini/littlepoolplugin.git</repo>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <js-module src="www/BluetoothActivatorPlugin.js" name="HybridBridge">
+        <clobbers target="BluetoothActivatorPlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BluetoothActivatorPlugin">
+                <param name="android-package" value="com.situ.situscale.situbluetoothsample.BluetoothActivatorPlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/com/situ/situscale/situbluetoothsample/BluetoothActivatorPlugin.java" target-dir="src/com/situ/situscale/situbluetoothsample"/>
+    </platform>
+
+</plugin>
